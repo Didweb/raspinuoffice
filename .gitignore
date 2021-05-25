@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -8,6 +7,8 @@
 /var/
 /vendor/
 /data/*
+/docs/*.dia.autosave
+/apps/backoffice/var/*
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
