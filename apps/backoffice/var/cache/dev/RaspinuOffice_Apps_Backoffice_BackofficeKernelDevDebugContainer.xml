@@ -84,9 +84,25 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
+    <service id="RaspinuOffice\Apps\Backoffice\Controller\Gener\CreateGenerPostController" class="RaspinuOffice\Apps\Backoffice\Controller\Gener\CreateGenerPostController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="RaspinuOffice\Apps\Backoffice\Controller\HealthCheck\HealthCheckGetController" class="RaspinuOffice\Apps\Backoffice\Controller\HealthCheck\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="RaspinuOffice\Shared\Domain\Utils\Utils" class="RaspinuOffice\Shared\Domain\Utils\Utils" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Shared\Domain\ValueObjects\Exception\UuidValueException" class="RaspinuOffice\Shared\Domain\ValueObjects\Exception\UuidValueException" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand" class="RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommandHandler" class="RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommandHandler" autowire="true" autoconfigure="true">
+      <argument type="service" id="RaspinuOffice\Backoffice\Products\Gener\Application\Command\GenerCreator"/>
+    </service>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Application\Command\GenerCreator" class="RaspinuOffice\Backoffice\Products\Gener\Application\Command\GenerCreator" autowire="true" autoconfigure="true">
+      <argument type="service" id="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Repository\DoctrineGenerRepository"/>
+    </service>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Domain\Gener" class="RaspinuOffice\Backoffice\Products\Gener\Domain\Gener" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Domain\GenerName" class="RaspinuOffice\Backoffice\Products\Gener\Domain\GenerName" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Repository\DoctrineGenerRepository" class="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Repository\DoctrineGenerRepository" autowire="true" autoconfigure="true"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Type\GenerIdType" class="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Type\GenerIdType" autowire="true" autoconfigure="true"/>
     <service id="RaspinuOffice\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus" class="RaspinuOffice\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus" lazy="true" autowire="true" autoconfigure="true">
       <argument type="tagged_iterator" tag="codely.domain_event_subscriber"/>
     </service>
@@ -2736,6 +2752,8 @@
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container">
       <deprecated package="symfony/dependency-injection" version="5.1">The "%alias_id%" autowiring alias is deprecated. Define it explicitly in your app if you want to keep using it.</deprecated>
     </service>
+    <service id="RaspinuOffice\Shared\Domain\Bus\Command\Command" alias="RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand"/>
+    <service id="RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository" alias="RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Repository\DoctrineGenerRepository"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher"/>

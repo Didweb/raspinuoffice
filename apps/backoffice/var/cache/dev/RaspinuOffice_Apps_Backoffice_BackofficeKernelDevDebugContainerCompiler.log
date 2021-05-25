@@ -19,6 +19,8 @@ Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "R
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "RaspinuOffice\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus": Class or interface "RaspinuOffice\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Psr\Container\ContainerInterface"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Symfony\Component\DependencyInjection\ContainerInterface"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "RaspinuOffice\Shared\Domain\Bus\Command\Command"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Symfony\Component\EventDispatcher\EventDispatcherInterface"; reason: private alias.
@@ -165,6 +167,15 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "http_client.abstract_retry_strategy"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "mailer.transport_factory.abstract"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "notifier.transport_factory.abstract"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Shared\Domain\Utils\Utils"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Shared\Domain\ValueObjects\Exception\UuidValueException"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommandHandler"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Application\Command\GenerCreator"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Domain\Gener"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Domain\GenerName"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Repository\DoctrineGenerRepository"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Doctrine\Type\GenerIdType"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Shared\Infrastructure\Doctrine\DatabaseConnections"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "RaspinuOffice\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus"; reason: unused.
