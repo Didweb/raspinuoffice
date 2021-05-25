@@ -8,6 +8,7 @@
 /var/
 /vendor/
 /data/*
+/docs/*.dia.autosave
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
