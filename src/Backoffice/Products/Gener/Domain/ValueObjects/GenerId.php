@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Backoffice\Product\Gener\Domain\ValueObjects;
-
+namespace RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects;
 
 use RaspinuOffice\Shared\Domain\ValueObjects\Uuid;
 

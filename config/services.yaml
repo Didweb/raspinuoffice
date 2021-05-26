@@ -18,3 +18,24 @@ services:
         resource: '../src/*'
         exclude: '../src/{Infrastructure/Persistence/Doctrine/Migrations,tests,Kernel.php}'
 
+    command_handlers:
+        namespace: RaspinuOffice\Backoffice\
+        resource: '%kernel.project_dir%/src/Backoffice/*/*/Application/Command/{*/*CommandHandler.php,*CommandHandler.php}'
+        autoconfigure: false
+        tags:
+            - { name: messenger.message_handler, bus: command.bus }
+
+    query_handlers:
+        namespace: RaspinuOffice\Backoffice\
+        resource: '%kernel.project_dir%/src/Backoffice/*/*/Application/Query/{*/*QueryHandler.php,*QueryHandler.php}'
+        autoconfigure: false
+        tags:
+            - { name: messenger.message_handler, bus: command.query }
+
+    event_handlers:
+        namespace: RaspinuOffice\Backoffice\
+        resource: '%kernel.project_dir%/src/Backoffice/*/*/Application/Event/{*/*EventHandler.php,*EventHandler.php}'
+        autoconfigure: false
+        tags:
+            - { name: messenger.message_handler, bus: command.event }
+

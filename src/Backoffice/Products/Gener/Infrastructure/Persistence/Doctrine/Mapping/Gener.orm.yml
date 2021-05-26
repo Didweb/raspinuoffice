@@ -1,0 +1,8 @@
+RaspinuOffice\Bakcoffice\Products\Gener\Domain\Gener:
+  type: entity
+
+  id:
+    id: { type: gener_id }
+
+  fields:
+    name: { type: string , nullable: false }

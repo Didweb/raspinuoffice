@@ -9,9 +9,15 @@ doctrine:
         types:
             ### shared
             gener_id:
-                class: RaspinuOffice\Backoffice\Product\Gener\Infrastructure\Persistence\Doctrine\Type\GenerIdType
+                class: RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Persistence\Doctrine\Type\GenerIdType
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
+            gener:
+                mapping: true
+                type: yml
+                dir: '%kernel.project_dir%/src/Backoffice/Products/Gener/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'RaspinuOffice\Backoffice\Products\Gener\Domain'
+                alias: budget
