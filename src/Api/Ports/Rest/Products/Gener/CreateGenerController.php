@@ -13,6 +13,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Nelmio\ApiDocBundle\Annotation as Api;
+use OpenApi\Annotations as OA;
+use Nelmio\ApiDocBundle\Annotation\Model;
 
 final class CreateGenerController extends AbstractController
 {
@@ -30,6 +33,39 @@ final class CreateGenerController extends AbstractController
      * Create a Gener
      *
      * @Route("/create/gener", methods={"POST"}, name="api_gener_create")
+
+     *     @OA\RequestBody(
+     *        required = true,
+     *        description = "Data packet for Test",
+     *        @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                property="gener",
+     *                type="array",
+     *                example={{
+     *                  "id": "b026b3f4-be48-11eb-8529-0242ac130003",
+     *                  "name": "Rock"
+     *                }},
+     *                @OA\Items(
+     *                      @OA\Property(
+     *                         property="id",
+     *                         type="string",
+     *                         example=""
+     *                      ),
+     *                      @OA\Property(
+     *                         property="name",
+     *                         type="string",
+     *                         example=""
+     *                      ),
+     *                ),
+     *             ),
+     *        ),
+     *
+     *     @OA\Response(
+     *        response="200",
+     *        description="Successful response",
+     *     ),
+     * )
      **/
     public function __invoke(Request $request): Response
     {

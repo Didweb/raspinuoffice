@@ -20,7 +20,7 @@ final class CreateGenerCommandHandler
     public function __invoke(CreateGenerCommand $command): void
     {
         $serviceCommand = new CreateGenerServiceCommand(
-            GenerId::create(Uuid::next()),
+            GenerId::create($command->id()),
             $command->name()
         );
 
