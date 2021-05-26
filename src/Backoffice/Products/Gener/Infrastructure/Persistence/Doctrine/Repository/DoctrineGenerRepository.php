@@ -24,8 +24,14 @@ final class DoctrineGenerRepository implements GenerRepository
         $this->repository = $repository;
     }
 
-    public function save(Gener $employee): void
+    public function save(Gener $gener): void
     {
-        $this->em->persist($employee);
+        $this->em->persist($gener);
+
+    }
+
+    public function findByName(string $name): ?Gener
+    {
+        return $this->repository->findOneBy(['name'=>$name]);
     }
 }

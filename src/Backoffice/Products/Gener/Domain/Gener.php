@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RaspinuOffice\Backoffice\Products\Gener\Domain;
 
-use RaspinuOffice\Backoffice\Product\Gener\Domain\ValueObjects\GenerId;
+use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
 final class Gener
 {

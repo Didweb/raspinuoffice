@@ -7,12 +7,13 @@ namespace RaspinuOffice\Backoffice\Products\Gener\Application\Services;
 
 use RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerServiceCommand;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\Gener;
+use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository;
 
-final class CreateGener
+class CreateGener
 {
-    private $repository;
+    private GenerRepository $repository;
 
-    public function __construct($repository)
+    public function __construct(GenerRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -24,7 +25,10 @@ final class CreateGener
             $command->name()
         );
 
-        $this->repository->save($gener);
+        if($this->repository->findByName($command->name()) == null ){
+            $this->repository->save($gener);
+        }
+
     }
 
 }

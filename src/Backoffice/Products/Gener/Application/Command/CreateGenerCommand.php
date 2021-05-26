@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RaspinuOffice\Backoffice\Products\Gener\Application\Command;
 
 
-use RaspinuOffice\Infrsatructure\Messenger\Command\Command;
+use RaspinuOffice\Infrastructure\Messenger\Command\Command;
 
 final class CreateGenerCommand extends Command
 {
@@ -26,5 +26,13 @@ final class CreateGenerCommand extends Command
     public function name(): string
     {
         return $this->name;
+    }
+
+    public function _toArray(): array
+    {
+        return [
+            'id'=>$this->id(),
+            'name'=>$this->name(),
+            ];
     }
 }

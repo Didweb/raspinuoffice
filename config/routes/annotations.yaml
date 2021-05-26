@@ -1,3 +1,9 @@
+api_core:
+    resource: ../../src/Api/Ports/Rest
+    type: annotation
+    prefix: /api
+    defaults:
+        _format: 'json'
 kernel:
     resource: ../../src/Kernel.php
     type: annotation

@@ -6,7 +6,7 @@ namespace RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Persistence\Doc
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
-use RaspinuOffice\Backoffice\Product\Gener\Domain\ValueObjects\GenerId;
+use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
 final class GenerIdType extends StringType
 {
