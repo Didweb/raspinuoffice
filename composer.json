@@ -7,12 +7,24 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+<<<<<<< HEAD
         "composer/package-versions-deprecated": "1.11.99.2",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
         "phpdocumentor/reflection-docblock": "^5.2",
+=======
+        "composer/package-versions-deprecated": "1.11.99.1",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.3",
+        "doctrine/doctrine-migrations-bundle": "^3.1",
+        "doctrine/orm": "^2.8",
+        "fzaninotto/faker": "^1.9",
+        "lambdish/phunctional": "^2.1",
+        "phpdocumentor/reflection-docblock": "^5.2",
+        "ramsey/uuid": "^4.1",
+>>>>>>> 5aeea843227b85ec303a1318ddb615b89a6b9c89
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "5.2.*",
         "symfony/console": "5.2.*",
@@ -40,6 +52,7 @@
         "symfony/web-link": "5.2.*",
         "symfony/yaml": "5.2.*",
         "twig/extra-bundle": "^2.12|^3.0",
+<<<<<<< HEAD
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
@@ -47,6 +60,17 @@
         "symfony/css-selector": "^5.2",
         "symfony/debug-bundle": "^5.2",
         "symfony/maker-bundle": "^1.0",
+=======
+        "twig/twig": "^2.12|^3.0",
+      "ext-json": "*"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4",
+        "symfony/browser-kit": "^5.2",
+        "symfony/css-selector": "^5.2",
+        "symfony/debug-bundle": "^5.2",
+        "symfony/maker-bundle": "^1.30",
+>>>>>>> 5aeea843227b85ec303a1318ddb615b89a6b9c89
         "symfony/phpunit-bridge": "^5.2",
         "symfony/stopwatch": "^5.2",
         "symfony/var-dumper": "^5.2",
@@ -61,12 +85,22 @@
     },
     "autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "App\\": "src/"
+=======
+            "RaspinuOffice\\Apps\\Backoffice\\": "apps/backoffice/src",
+
+            "RaspinuOffice\\": ["src"]
+>>>>>>> 5aeea843227b85ec303a1318ddb615b89a6b9c89
         }
     },
     "autoload-dev": {
         "psr-4": {
+<<<<<<< HEAD
             "App\\Tests\\": "tests/"
+=======
+            "RaspinuOffice\\Tests\\": ["tests/src", "tests/apps"]
+>>>>>>> 5aeea843227b85ec303a1318ddb615b89a6b9c89
         }
     },
     "replace": {

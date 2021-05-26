@@ -1,0 +1,4 @@
+create-gener_post:
+  path: /create-gener
+  controller: RaspinuOffice\Apps\Backoffice\Controller\Gener\CreateGenerPostController
+  methods:  [POST]
