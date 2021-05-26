@@ -1,8 +1,0 @@
-RaspinuOffice\Backoffice\Products\Gener\Domain:
-  type: entity
-
-  id:
-    id: { type: gener_id }
-
-  fields:
-    name: { type: string, nullable: false }
