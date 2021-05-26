@@ -1,4 +1,0 @@
-health-check_get:
-  path: /health-check
-  controller: RaspinuOffice\Apps\Backoffice\Controller\HealthCheck\HealthCheckGetController
-  methods:  [GET]
