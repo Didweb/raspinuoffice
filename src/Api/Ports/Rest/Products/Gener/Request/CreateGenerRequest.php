@@ -30,7 +30,7 @@ final class CreateGenerRequest
 
     public static function fromContent(array $content): self
     {
-
+        $content = $content['gener'][0];
         if (!isset($content['name'])
         ) {
             throw new InvalidArgumentException('Field name is required');
