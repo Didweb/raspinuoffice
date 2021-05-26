@@ -6,10 +6,10 @@
 /public/bundles/
 /var/
 /vendor/
-/data/*
-/docs/*.dia.autosave
-/apps/backoffice/var/*
 ###< symfony/framework-bundle ###
+
+/data/*
+
 
 ###> symfony/phpunit-bridge ###
 .phpunit
