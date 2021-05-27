@@ -43,3 +43,6 @@ services:
         tags:
             - { name: messenger.message_handler, bus: command.event }
 
+    RaspinuOffice\Api\Ports\Rest\:
+        resource: '../src/Api/Ports/Rest/**/{*Controller.php}'
+        tags: ['controller.service_arguments']
