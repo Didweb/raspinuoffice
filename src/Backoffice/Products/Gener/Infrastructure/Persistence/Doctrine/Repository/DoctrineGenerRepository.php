@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\Gener;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository;
+use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
 final class DoctrineGenerRepository implements GenerRepository
 {
@@ -33,5 +34,10 @@ final class DoctrineGenerRepository implements GenerRepository
     public function findByName(string $name): ?Gener
     {
         return $this->repository->findOneBy(['name'=>$name]);
+    }
+
+    public function find(GenerId $generId): ?Gener
+    {
+        return $this->repository->findOneBy(['id'=>$generId]);
     }
 }
