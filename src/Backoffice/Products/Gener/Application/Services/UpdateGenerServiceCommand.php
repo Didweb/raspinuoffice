@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Backoffice\Products\Gener\Domain;
+namespace RaspinuOffice\Backoffice\Products\Gener\Application\Services;
 
-use RaspinuOffice\Backoffice\Products\Gener\Application\Services\UpdateGenerServiceCommand;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
-final class Gener
+final class UpdateGenerServiceCommand
 {
     private GenerId $id;
     private string $name;
@@ -26,10 +25,5 @@ final class Gener
     public function name(): string
     {
         return $this->name;
-    }
-
-    public function updateGener(UpdateGenerServiceCommand $command): void
-    {
-        $this->name = $command->name();
     }
 }
