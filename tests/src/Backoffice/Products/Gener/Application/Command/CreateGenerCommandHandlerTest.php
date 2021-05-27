@@ -33,7 +33,7 @@ final class CreateGenerCommandHandlerTest extends TestCase
         );
 
         $this->useCase->expects($this->once())
-            ->method('invoke');
+            ->method('__invoke');
 
         $this->handler->__invoke($command);
     }

@@ -24,3 +24,6 @@ Record:
 
 #### Psalm
 Run Psalm: `./vendor/bin/psalm` 
+
+#### Phpunit
+Run Phpunit: `./vendor/bin/phpunit`

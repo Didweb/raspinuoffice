@@ -6,6 +6,7 @@ namespace RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\ValueObjec
 
 
 use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
+use RaspinuOffice\Shared\Infrastructure\Helper\Faker;
 
 final class GenerIdStub
 {
