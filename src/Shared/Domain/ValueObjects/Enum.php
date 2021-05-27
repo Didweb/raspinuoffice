@@ -35,7 +35,7 @@ abstract class Enum
 
     public function __toString(): string
     {
-        return (string) $this->enum;
+        return $this->enum;
     }
 
     public function equals(self $other) : bool

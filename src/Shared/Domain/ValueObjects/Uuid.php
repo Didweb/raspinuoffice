@@ -33,7 +33,7 @@ class Uuid
 
     public function __toString(): string
     {
-        return (string)$this->id;
+        return $this->id;
     }
 
     public function equals(self $uuid): bool

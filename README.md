@@ -32,3 +32,13 @@ Record:
   ha de especificarse de forma unitaria en cada unidad de stock.
 
 ![Diagrama Products](docs/diagrama_products.png)
+
+---
+
+### Testing
+
+#### Psalm
+Run Psalm: `./vendor/bin/psalm` 
+
+#### Phpunit
+Run Phpunit: `./vendor/bin/phpunit`
