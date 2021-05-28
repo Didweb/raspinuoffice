@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RaspinuOffice\Shared\Domain\Messenger;
 
 
-use RaspinuOffice\Infrastructure\Messenger\Command\Command;
+use RaspinuOffice\Shared\Domain\Messenger\Command\Command;
 
 interface CommandBusInterface
 {
