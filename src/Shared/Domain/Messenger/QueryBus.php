@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Infrastructure\Messenger;
+namespace RaspinuOffice\Shared\Domain\Messenger;
 
-
-
-use RaspinuOffice\Infrastructure\Messenger\Command\Command;
+use RaspinuOffice\Shared\Domain\Messenger\Query\Query;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Messenger\Stamp\HandledStamp;
 use Throwable;
 
-final class CommandBus implements CommandBusInterface
+final class QueryBus implements QueryBusInterface
 {
+
     private MessageBusInterface $messageBus;
 
     public function __construct(MessageBusInterface $messageBus)
@@ -20,11 +20,17 @@ final class CommandBus implements CommandBusInterface
         $this->messageBus = $messageBus;
     }
 
-    public function dispatch(Command $command): void
+
+    public function dispatch(Query $query): Query
     {
-        dump($command);
         try {
-            $this->messageBus->dispatch($command);
+            $response = $this->messageBus->dispatch($query);
+
+            /** @var HandledStamp $handled */
+            $handled = $response->last(HandledStamp::class);
+
+            return $handled->getResult();
+
         } catch (HandlerFailedException $e) {
             while ($e instanceof HandlerFailedException) {
                 /** @var Throwable $e */

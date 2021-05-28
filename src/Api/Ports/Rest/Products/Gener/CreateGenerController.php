@@ -8,7 +8,7 @@ namespace RaspinuOffice\Api\Ports\Rest\Products\Gener;
 use RaspinuOffice\Api\Ports\Rest\ApiController;
 use RaspinuOffice\Api\Ports\Rest\Products\Gener\Request\CreateGenerRequest;
 use RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand;
-use RaspinuOffice\Infrastructure\Messenger\CommandBusInterface;
+use RaspinuOffice\Shared\Domain\Messenger\CommandBusInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

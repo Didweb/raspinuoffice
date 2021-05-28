@@ -6,16 +6,13 @@ namespace RaspinuOffice\Tests\src\Backoffice\Products\Gener\Application\Command;
 
 
 use PHPUnit\Framework\TestCase;
-use RaspinuOffice\Backoffice\Products\Gener\Application\Command\UpdateGenerCommand;
 use RaspinuOffice\Backoffice\Products\Gener\Application\Command\UpdateGenerCommandHandler;
 use RaspinuOffice\Backoffice\Products\Gener\Application\Services\UpdateGener;
 use RaspinuOffice\Backoffice\Products\Gener\Application\Services\UpdateGenerServiceCommand;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\Gener;
-use RaspinuOffice\Infrastructure\Messenger\QueryBusInterface;
-use RaspinuOffice\Shared\Infrastructure\Helper\Faker;
+use RaspinuOffice\Shared\Domain\Messenger\QueryBusInterface;
 use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\GenerInMemeoryRepositoryStub;
 use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\GenerStub;
-use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\ValueObjects\GenerIdStub;
 
 final class UpdateGenerCommandHandlerTest extends TestCase
 {
