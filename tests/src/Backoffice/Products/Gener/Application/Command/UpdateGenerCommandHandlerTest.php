@@ -45,10 +45,18 @@ final class UpdateGenerCommandHandlerTest extends TestCase
     {
         $this->repository->save($this->gener);
 
-        $this->useCase->__invoke($this->command);
+
+        $generUpdate = GenerStub::create($this->gener->id(), 'NewName');
+        $commandUpdate = new UpdateGenerServiceCommand(
+            $generUpdate->id(),
+            $generUpdate->name()
+        );
+
+        $this->useCase->__invoke($commandUpdate);
+
         $generFind = $this->repository->find($this->gener->id());
 
-        $this->assertEquals($generFind->id(), $this->gener->id());
+        $this->assertEquals($generFind->name(), $generUpdate->name());
     }
 
 }

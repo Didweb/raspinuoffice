@@ -14,4 +14,9 @@ final class GenerIdStub
     {
         return GenerId::create(Faker::uuid());
     }
+
+    public static function create(string $generId): GenerId
+    {
+        return GenerId::create($generId);
+    }
 }
