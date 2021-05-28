@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Infrastructure\Messenger\Query;
+namespace RaspinuOffice\Shared\Domain\Messenger\Query;
 
 final class Query
 {

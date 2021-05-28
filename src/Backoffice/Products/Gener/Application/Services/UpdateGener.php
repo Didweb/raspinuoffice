@@ -8,7 +8,7 @@ namespace RaspinuOffice\Backoffice\Products\Gener\Application\Services;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerFinder;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerFinderByName;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository;
-use RaspinuOffice\Infrastructure\Messenger\QueryBusInterface;
+use RaspinuOffice\Shared\Domain\Messenger\QueryBusInterface;
 
 final class UpdateGener
 {

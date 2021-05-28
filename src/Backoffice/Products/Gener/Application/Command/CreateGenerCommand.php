@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace RaspinuOffice\Backoffice\Products\Gener\Application\Command;
 
 
-use RaspinuOffice\Infrastructure\Messenger\Command\Command;
+use RaspinuOffice\Shared\Domain\Messenger\Command\Command;
 
 final class CreateGenerCommand extends Command
 {
