@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Infrastructure;
+namespace RaspinuOffice\Infrastructure\Messenger;
 
 use RaspinuOffice\Infrastructure\Messenger\Query\Query;
 use RaspinuOffice\Infrastructure\Messenger\QueryBusInterface;
@@ -22,7 +22,7 @@ final class QueryBus implements QueryBusInterface
     }
 
 
-    public function dispatch(Query $query)
+    public function dispatch(Query $query): Query
     {
         try {
             $response = $this->messageBus->dispatch($query);

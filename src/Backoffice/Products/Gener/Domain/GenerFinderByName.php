@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace RaspinuOffice\Backoffice\Products\Gener\Domain;
 
-use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerNotFoundException;
-use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
-final class GenerFinder
+use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerNotFoundException;
+
+final class GenerFinderByName
 {
     private GenerRepository $repository;
 
@@ -16,15 +16,8 @@ final class GenerFinder
         $this->repository = $repository;
     }
 
-    public function __invoke(GenerId $generId): Gener
+    public function __invoke(string $name): ?Gener
     {
-        $gener = $this->repository->find($generId);
-
-        if(null === $gener) {
-            throw GenerNotFoundException::ofId($generId);
-        }
-
-        return $gener;
+        return $this->repository->findByName($name);
     }
-
 }

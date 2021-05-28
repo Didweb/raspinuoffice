@@ -6,7 +6,6 @@ namespace RaspinuOffice\Backoffice\Products\Gener\Application\Command;
 
 use RaspinuOffice\Backoffice\Products\Gener\Application\Services\CreateGener;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
-use RaspinuOffice\Shared\Domain\ValueObjects\Uuid;
 
 final class CreateGenerCommandHandler
 {
