@@ -30,6 +30,7 @@ final class UpdateGener
     public function __invoke(UpdateGenerServiceCommand $serviceCommand): void
     {
         $gener = $this->finder->__invoke($serviceCommand->id());
+
         $existThisGener = $this->finderByName->__invoke($serviceCommand->name());
 
         if (!$existThisGener) {
