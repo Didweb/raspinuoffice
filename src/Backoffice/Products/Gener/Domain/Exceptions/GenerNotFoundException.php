@@ -9,10 +9,10 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final class GenerNotFoundException extends NotFoundHttpException
 {
-    public static function ofId(?GenerId $dealId): self
+    public static function ofId(?GenerId $generId): self
     {
         return new self(
-            sprintf('Gener with id <%s> not found', (string)$dealId)
+            sprintf('Gener with id <%s> not found', (string)$generId)
         );
     }
 }
