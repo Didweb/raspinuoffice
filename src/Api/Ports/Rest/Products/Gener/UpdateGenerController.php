@@ -62,7 +62,11 @@ final class UpdateGenerController
      *
      *     @OA\Response(
      *        response="200",
-     *        description="Successful response",
+     *        description="Successful response: Gener resource has been updated."
+     *     ),
+     *     @OA\Response(
+     *        response="204",
+     *        description="Successful response: The resource already exists. There has been no change."
      *     ),
      * )
      **/

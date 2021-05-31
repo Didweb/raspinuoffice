@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace RaspinuOffice\Backoffice\Products\Gener\Domain;
 
 
-use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerNotFoundException;
+use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerThisNameAlreadyExist;
 
-final class GenerFinderByName
+final class GenerThisNameExists
 {
     private GenerRepository $repository;
 
@@ -18,6 +18,12 @@ final class GenerFinderByName
 
     public function __invoke(string $name): ?Gener
     {
-        return $this->repository->findByName($name);
+
+        $existThisName = $this->repository->findByName($name);
+
+        if (!$existThisName) {
+          throw GenerThisNameAlreadyExist::ofName($name);
+        }
+        return $existThisName;
     }
 }
