@@ -29,14 +29,13 @@ final class UpdateGenerCommandHandlerTest extends TestCase
     {
         $this->queryBus = $this->createMock(QueryBusInterface::class);
         $this->repository = GenerInMemeoryRepositoryStub::empty();
-        $this->useCase  = new UpdateGener( $this->repository,$this->queryBus);
+        $this->useCase = new UpdateGener($this->repository);
 
         $this->gener = GenerStub::random();
         $this->command = new UpdateGenerServiceCommand(
             $this->gener->id(),
             $this->gener->name()
         );
-
     }
 
     public function test_should_update_gener_not_exist_name_gener(): void
@@ -59,7 +58,6 @@ final class UpdateGenerCommandHandlerTest extends TestCase
 
     public function test_should_update_gener_exist_name_gener(): void
     {
-
         $this->expectException(GenerThisNameAlreadyExist::class);
 
         $this->repository->save($this->gener);
@@ -71,8 +69,6 @@ final class UpdateGenerCommandHandlerTest extends TestCase
         );
 
         $this->useCase->__invoke($commandUpdate);
-
-
     }
 
 }
