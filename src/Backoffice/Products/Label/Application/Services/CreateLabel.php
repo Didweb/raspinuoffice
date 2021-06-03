@@ -27,7 +27,7 @@ final class CreateLabel
             $command->name()
         );
 
-        $this->thisNameExist->__invoke($gener->name());
+        $this->thisNameExist->__invoke((string)$command->name());
 
         $this->repository->save($gener);
     }

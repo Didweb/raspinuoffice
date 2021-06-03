@@ -9,18 +9,18 @@ use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject\LabelName;
 
 final class Label
 {
-    private LabelId $labelId;
+    private LabelId $id;
     private LabelName $name;
 
-    public function __construct(LabelId $labelId, LabelName $name)
+    public function __construct(LabelId $id, LabelName $name)
     {
-        $this->labelId = $labelId;
+        $this->id = $id;
         $this->name = $name;
     }
 
-    public function labelId(): LabelId
+    public function id(): LabelId
     {
-        return $this->labelId;
+        return $this->id;
     }
 
     public function name(): LabelName

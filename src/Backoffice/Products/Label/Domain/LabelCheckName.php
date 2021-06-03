@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace RaspinuOffice\Backoffice\Products\Label\Domain;
 
 
+use RaspinuOffice\Backoffice\Products\Label\Domain\Exceptions\LabelThisNameAlreadyExist;
+
 final class LabelCheckName
 {
     private LabelRepository $repository;
@@ -19,7 +21,7 @@ final class LabelCheckName
         $existThisName = $this->repository->findByName($name);
 
         if ($existThisName !== null) {
-            throw GenerThisNameAlreadyExist::ofName($name);
+            throw LabelThisNameAlreadyExist::ofName($name);
         }
         return $existThisName;
     }
