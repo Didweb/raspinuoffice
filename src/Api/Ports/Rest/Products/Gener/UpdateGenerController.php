@@ -60,6 +60,7 @@ final class UpdateGenerController
      *             ),
      *        ),
      *
+     * ),
      *     @OA\Response(
      *        response="200",
      *        description="Successful response: Gener resource has been updated."
@@ -68,7 +69,6 @@ final class UpdateGenerController
      *        response="204",
      *        description="Successful response: The resource already exists. There has been no change."
      *     ),
-     * )
      **/
     public function __invoke(Request $request): Response
     {
