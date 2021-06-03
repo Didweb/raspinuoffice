@@ -7,7 +7,7 @@ namespace RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject;
 
 use RaspinuOffice\Shared\Domain\ValueObjects\StringValueObject;
 
-final class LableName extends StringValueObject
+final class LabelName extends StringValueObject
 {
 
 }

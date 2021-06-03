@@ -2,19 +2,18 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Api\Ports\Rest\Products\Gener;
-
+namespace RaspinuOffice\Api\Ports\Rest\Products\Label;
 
 use RaspinuOffice\Api\Ports\Rest\ApiController;
-use RaspinuOffice\Api\Ports\Rest\Products\Gener\Request\CreateGenerRequest;
-use RaspinuOffice\Backoffice\Products\Gener\Application\Command\CreateGenerCommand;
+use RaspinuOffice\Api\Ports\Rest\Products\Label\Request\CreateLabelRequest;
+use RaspinuOffice\Backoffice\Products\Label\Application\CreateLabelCommand;
 use RaspinuOffice\Shared\Domain\Messenger\CommandBusInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
 
-final class CreateGenerController
+final class CreatedLabelController
 {
     private ApiController $apiController;
     private CommandBusInterface $commandBus;
@@ -25,26 +24,25 @@ final class CreateGenerController
         $this->commandBus = $commandBus;
     }
 
-
     /**
-     * Create a Gener
+     * Create a Label
      *
-     * @Route("/create/gener", methods={"POST"}, name="api_gener_create")
+     * @Route("/create/label", methods={"POST"}, name="api_gener_label")
      * @OA\Tag(
-     *     name="Gener",
-     *     description="Operations about gener"
+     *     name="Label",
+     *     description="Operations about label"
      * )
      *     @OA\RequestBody(
      *        required = true,
-     *        description = "Data packet for Test",
+     *        description = "Data packet for create label",
      *        @OA\JsonContent(
      *             type="object",
      *             @OA\Property(
-     *                property="gener",
+     *                property="label",
      *                type="array",
      *                example={{
-     *                  "id": "b026b3f4-be48-11eb-8529-0242ac130003",
-     *                  "name": "Rock"
+     *                  "id": "b026b3f4-be48-11eb-8529-0242ac130011",
+     *                  "name": "EMI Records"
      *                }},
      *                @OA\Items(
      *                      @OA\Property(
@@ -63,25 +61,26 @@ final class CreateGenerController
      * )
      * @OA\Response(
      *        response="200",
-     *        description="Success: Gener created",
+     *        description="Success: Label created",
      *     ),
      * @OA\Response(
      *        response="204",
-     *        description="Success: This gener name already exists.",
+     *        description="Success: This gener label already exists.",
      *     ),
      **/
     public function __invoke(Request $request): Response
     {
 
-        $request = CreateGenerRequest::fromContent($this->apiController->getContent($request));
+        $request = CreateLabelRequest::fromContent($this->apiController->getContent($request));
 
-        $createGenerCommand = new CreateGenerCommand(
+        $createLabelCommand = new CreateLabelCommand(
             $request->id(),
             $request->name()
         );
 
-        $this->commandBus->dispatch($createGenerCommand);
+        $this->commandBus->dispatch($createLabelCommand);
 
-        return $this->apiController->makeResponse($createGenerCommand->_toArray(), Response::HTTP_CREATED);
+        return $this->apiController->makeResponse($createLabelCommand->_toArray(), Response::HTTP_CREATED);
     }
+
 }
