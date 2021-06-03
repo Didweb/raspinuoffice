@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace RaspinuOffice\Backoffice\Products\Gener\Domain;
 
+use Exception;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerNotFoundException;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
@@ -20,8 +21,8 @@ final class GenerFinder
     {
         $gener = $this->repository->find($generId);
 
-        if(null === $gener) {
-            throw GenerNotFoundException::ofId($generId);
+        if (null === $gener) {
+            throw  GenerNotFoundException::ofId($generId);
         }
 
         return $gener;
