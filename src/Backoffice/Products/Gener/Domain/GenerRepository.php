@@ -13,4 +13,6 @@ interface GenerRepository
     public function findByName(string $name): ?Gener;
 
     public function find(GenerId $generId): ?Gener;
+
+    public function remove(Gener $gener): void;
 }

@@ -14,6 +14,8 @@ final class ApiController
 {
 
 
+
+
     public function getContent(Request $request ): array
     {
 

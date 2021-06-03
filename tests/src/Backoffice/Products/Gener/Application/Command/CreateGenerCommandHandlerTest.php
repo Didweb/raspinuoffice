@@ -54,7 +54,7 @@ final class CreateGenerCommandHandlerTest extends TestCase
         $this->handler->__invoke($command);
     }
 
-    public function test_should_create_gener_exist_name_gener(): void
+    public function test_should_not_create_gener_when_exist_name_gener(): void
     {
         $this->expectException(GenerThisNameAlreadyExist::class);
 
@@ -62,10 +62,10 @@ final class CreateGenerCommandHandlerTest extends TestCase
 
         $this->repository->save($this->gener);
 
-        $generCraete = GenerStub::create($this->gener->id(), $this->gener->name());
+        $generCreate = GenerStub::create($this->gener->id(), $this->gener->name());
         $commandUpdate = new CreateGenerServiceCommand(
-            $generCraete->id(),
-            $generCraete->name()
+            $generCreate->id(),
+            $generCreate->name()
         );
 
         $useCase->__invoke($commandUpdate);

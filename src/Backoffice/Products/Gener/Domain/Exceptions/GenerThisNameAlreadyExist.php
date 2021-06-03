@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions;
 
-use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 final class GenerThisNameAlreadyExist extends HttpException
