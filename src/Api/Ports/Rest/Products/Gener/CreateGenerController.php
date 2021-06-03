@@ -61,11 +61,16 @@ final class CreateGenerController
      *             ),
      *        ),
      *
-     *     @OA\Response(
-     *        response="200",
-     *        description="Successful response",
-     *     ),
+
      * )
+     * @OA\Response(
+     *        response="200",
+     *        description="Success: Gener created",
+     *     ),
+     * @OA\Response(
+     *        response="204",
+     *        description="Success: This gener name already exists.",
+     *     ),
      **/
     public function __invoke(Request $request): Response
     {
