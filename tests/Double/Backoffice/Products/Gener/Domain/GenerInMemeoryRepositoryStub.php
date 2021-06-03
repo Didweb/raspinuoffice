@@ -61,6 +61,12 @@ final class GenerInMemeoryRepositoryStub
 
                 return $filter->count() ? $filter->first() : null;
             }
+
+            public function remove(Gener $gener): void
+            {
+                $this->arrayCollection->removeElement($gener);
+
+            }
         }
         );
     }
