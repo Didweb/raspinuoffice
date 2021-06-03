@@ -1,0 +1,7 @@
+default:
+    suites:
+        default:
+            contexts:
+              - RaspinuOffice\Tests\Behat\CreateGener
+              - RaspinuOffice\Tests\Behat\DemoContext
+
