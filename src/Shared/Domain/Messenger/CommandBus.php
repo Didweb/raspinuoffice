@@ -22,7 +22,7 @@ final class CommandBus implements CommandBusInterface
 
     public function dispatch(Command $command): void
     {
-        dump($command);
+
         try {
             $this->messageBus->dispatch($command);
         } catch (HandlerFailedException $e) {

@@ -14,6 +14,9 @@ info:
 	docker ps
 psalm:
 	./vendor/bin/psalm
+psalmi:
+	./vendor/bin/psalm --show-info=true
+
 phpunit:
 	./vendor/bin/phpunit --colors=always -v
 alltests:

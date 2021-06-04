@@ -1,0 +1,8 @@
+RaspinuOffice\Backoffice\Products\Label\Domain\Label:
+  type: entity
+
+  id:
+    id: { type: label_id }
+
+  fields:
+    name: { type: label_name, unique: true}
