@@ -6,14 +6,14 @@ namespace RaspinuOffice\Api\Ports\Rest\Products\Label;
 
 use RaspinuOffice\Api\Ports\Rest\ApiController;
 use RaspinuOffice\Api\Ports\Rest\Products\Label\Request\CreateLabelRequest;
-use RaspinuOffice\Backoffice\Products\Label\Application\CreateLabelCommand;
+use RaspinuOffice\Backoffice\Products\Label\Application\Command\CreateLabelCommand;
 use RaspinuOffice\Shared\Domain\Messenger\CommandBusInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
 
-final class CreatedLabelController
+final class CreatedLabelPostController
 {
     private ApiController $apiController;
     private CommandBusInterface $commandBus;

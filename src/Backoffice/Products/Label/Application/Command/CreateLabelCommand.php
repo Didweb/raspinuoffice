@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Backoffice\Products\Label\Application;
+namespace RaspinuOffice\Backoffice\Products\Label\Application\Command;
 
 
 use RaspinuOffice\Shared\Domain\Messenger\Command\Command;

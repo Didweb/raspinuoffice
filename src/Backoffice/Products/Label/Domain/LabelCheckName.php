@@ -6,6 +6,7 @@ namespace RaspinuOffice\Backoffice\Products\Label\Domain;
 
 
 use RaspinuOffice\Backoffice\Products\Label\Domain\Exceptions\LabelThisNameAlreadyExist;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelName;
 
 final class LabelCheckName
 {
@@ -16,13 +17,12 @@ final class LabelCheckName
         $this->repository = $repository;
     }
 
-    public function __invoke(string $name): ?Label
+    public function __invoke(LabelName $name): void
     {
         $existThisName = $this->repository->findByName($name);
 
-        if ($existThisName !== null) {
-            throw LabelThisNameAlreadyExist::ofName($name);
+        if ($existThisName) {
+            throw   LabelThisNameAlreadyExist::onName($name);
         }
-        return $existThisName;
     }
 }

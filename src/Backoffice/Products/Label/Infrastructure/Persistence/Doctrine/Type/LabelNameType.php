@@ -7,9 +7,9 @@ namespace RaspinuOffice\Backoffice\Products\Label\Infrastructure\Persistence\Doc
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
-use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelName;
 
-final class LabelIdType extends StringType
+final class LabelNameType extends StringType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
@@ -25,6 +25,6 @@ final class LabelIdType extends StringType
             return null;
         }
 
-        return LabelId::create($value);
+        return new LabelName($value);
     }
 }

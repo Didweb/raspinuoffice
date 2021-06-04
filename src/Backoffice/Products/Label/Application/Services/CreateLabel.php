@@ -9,27 +9,27 @@ use RaspinuOffice\Backoffice\Products\Label\Domain\Label;
 use RaspinuOffice\Backoffice\Products\Label\Domain\LabelCheckName;
 use RaspinuOffice\Backoffice\Products\Label\Domain\LabelRepository;
 
-final class CreateLabel
+class CreateLabel
 {
     private LabelRepository $repository;
     private LabelCheckName $thisNameExist;
 
-    public function __construct(LabelRepository $repository, LabelCheckName $thisNameExist)
+    public function __construct(LabelRepository $repository)
     {
         $this->repository = $repository;
-        $this->thisNameExist = $thisNameExist;
+        $this->thisNameExist = new LabelCheckName($repository);
     }
 
     public function __invoke(CreateLabelServiceCommand $command): void
     {
-        $gener = new Label(
+        $label = new Label(
             $command->id(),
             $command->name()
         );
 
-        $this->thisNameExist->__invoke((string)$command->name());
+        $this->thisNameExist->__invoke($label->name());
 
-        $this->repository->save($gener);
+        $this->repository->save($label);
     }
 
 }

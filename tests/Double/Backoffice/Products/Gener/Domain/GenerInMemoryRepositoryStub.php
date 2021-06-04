@@ -10,7 +10,7 @@ use RaspinuOffice\Backoffice\Products\Gener\Domain\Gener;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\GenerRepository;
 use RaspinuOffice\Backoffice\Products\Gener\Domain\ValueObjects\GenerId;
 
-final class GenerInMemeoryRepositoryStub
+final class GenerInMemoryRepositoryStub
 {
 
     public static function empty(): GenerRepository
@@ -18,7 +18,7 @@ final class GenerInMemeoryRepositoryStub
         return self::repository([]);
     }
 
-    private static function repository(array $crmData)
+    private static function repository(array $crmData): GenerRepository
     {
         return (
         new class($crmData) implements GenerRepository

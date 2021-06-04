@@ -5,4 +5,4 @@ RaspinuOffice\Backoffice\Products\Label\Domain\Label:
     id: { type: label_id }
 
   fields:
-    name: { type: string, unique: true}
+    name: { type: label_name, unique: true}

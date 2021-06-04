@@ -4,14 +4,15 @@ declare(strict_types=1);
 
 namespace RaspinuOffice\Backoffice\Products\Label\Domain;
 
-use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelName;
 
 interface LabelRepository
 {
 
     public function save(Label $label): void;
 
-    public function findByName(string $name): ?Label;
+    public function findByName(LabelName $name): ?Label;
 
     public function find(LabelId $labelId): ?Label;
 

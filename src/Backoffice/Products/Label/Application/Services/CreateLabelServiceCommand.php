@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace RaspinuOffice\Backoffice\Products\Label\Application\Services;
 
 
-use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject\LabelId;
-use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject\LabelName;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelName;
 
 final class CreateLabelServiceCommand
 {

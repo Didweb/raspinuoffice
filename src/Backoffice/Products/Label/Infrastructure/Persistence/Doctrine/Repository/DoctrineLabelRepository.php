@@ -9,7 +9,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use RaspinuOffice\Backoffice\Products\Label\Domain\Label;
 use RaspinuOffice\Backoffice\Products\Label\Domain\LabelRepository;
-use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObject\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelId;
+use RaspinuOffice\Backoffice\Products\Label\Domain\ValueObjects\LabelName;
+
 
 final class DoctrineLabelRepository implements LabelRepository
 {
@@ -31,7 +33,7 @@ final class DoctrineLabelRepository implements LabelRepository
         $this->em->persist($label);
     }
 
-    public function findByName(string $name): ?Label
+    public function findByName(LabelName $name): ?Label
     {
         return $this->repository->findOneBy(['name' => $name]);
     }

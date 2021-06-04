@@ -13,7 +13,7 @@ use RaspinuOffice\Backoffice\Products\Gener\Domain\Exceptions\GenerNotFoundExcep
 use RaspinuOffice\Backoffice\Products\Gener\Domain\Gener;
 use RaspinuOffice\Backoffice\Products\Gener\Application\Services\RemoveGenerServiceCommand;
 use RaspinuOffice\Shared\Domain\Messenger\QueryBusInterface;
-use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\GenerInMemeoryRepositoryStub;
+use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\GenerInMemoryRepositoryStub;
 use RaspinuOffice\Tests\Double\Backoffice\Products\Gener\Domain\GenerStub;
 
 
@@ -31,7 +31,7 @@ final class RemoveGenerCommandHandlerTest extends TestCase
     public function setUp(): void
     {
         $this->queryBus = $this->createMock(QueryBusInterface::class);
-        $this->repository = GenerInMemeoryRepositoryStub::empty();
+        $this->repository = GenerInMemoryRepositoryStub::empty();
         $this->useCase = $this->createMock(RemoveGener::class);
         $this->handler = new RemoveGenerCommandHandler($this->useCase);
 
